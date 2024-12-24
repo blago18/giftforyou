@@ -16,8 +16,9 @@
             margin-top: 100px;
         }
         .gift-box {
-            width: 300px;
-            height: 300px;
+            position: relative;
+            width: 200px;
+            height: 200px;
             background: url('https://i.imgur.com/0tM1HY2.gif') no-repeat center/cover;
             margin: 0 auto;
             cursor: pointer;
@@ -26,6 +27,20 @@
         .gift-box.open {
             background: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3M5cmwwa2hyZHBqd290dWs2cm5zajEzYTlxN252M2UydWZ6Z2E1MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cMgkRA6RVDSt1RyB8u/giphy.webp') no-repeat center/cover;
             animation: none;
+        }
+        .click-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            display: block;
+        }
+        .gift-box.open .click-text {
+            display: none; /* Hide text when the gift is opened */
         }
         @keyframes shake {
             0%, 100% { transform: rotate(-5deg); }
@@ -36,7 +51,7 @@
             margin-top: 20px;
         }
         .pictures img {
-            width: 600px;
+            width: 300px; /* Increased size */
             height: auto;
             margin: 10px;
             border-radius: 10px;
@@ -46,7 +61,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="gift-box" id="giftBox"></div>
+        <div class="gift-box" id="giftBox">
+            <div class="click-text" id="clickText">Натисни ТУК</div>
+        </div>
         <div class="pictures" id="pictures">
             <img src="https://i.imgur.com/uIFPk42.png" alt="Picture 1">
             <img src="https://i.imgur.com/eVr7TOW.png" alt="Picture 2">
